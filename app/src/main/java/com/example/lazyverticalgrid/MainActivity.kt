@@ -3,6 +3,7 @@ package com.example.lazyverticalgrid
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -15,6 +16,7 @@ import com.example.lazyverticalgrid.screens.DetailsScreen
 import com.example.lazyverticalgrid.screens.HomeScreen
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -23,6 +25,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@ExperimentalFoundationApi
 @Composable
 fun LazyVerticalGridActivityScreen() {
     Column {
@@ -39,6 +42,7 @@ fun LazyVerticalGridActivityScreen() {
     }
 }
 
+@ExperimentalFoundationApi
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {

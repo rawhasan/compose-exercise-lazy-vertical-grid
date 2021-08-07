@@ -1,6 +1,7 @@
 package com.example.lazyverticalgrid.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
@@ -12,38 +13,52 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.lazyverticalgrid.data.DestinationDataSource
+import com.example.lazyverticalgrid.model.Destination
 
 @ExperimentalFoundationApi
 @Composable
 fun HomeScreen() {
-    val numbers = (1..21).toList()
+    val destinations = DestinationDataSource().loadData()
 
     LazyVerticalGrid(
         cells = GridCells.Adaptive(minSize = 140.dp),
         contentPadding = PaddingValues(16.dp)
     ) {
-        items(numbers) { number ->
+        items(destinations) { destination ->
             Row(Modifier.padding(8.dp)) {
-                ItemLayout(number)
+                ItemLayout(destination)
             }
         }
     }
 }
 
 @Composable
-fun ItemLayout(number: Int) {
+fun ItemLayout(destination: Destination) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .background(MaterialTheme.colors.primaryVariant)
-            .padding(horizontal = 24.dp, vertical = 32.dp)
             .fillMaxWidth()
     ) {
-        Text(text = number.toString(), color = Color.White, fontSize = 20.sp)
+        Image(
+            painter = painterResource(destination.photoId),
+            contentDescription = stringResource(destination.nameId),
+            modifier = Modifier.fillMaxWidth(),
+            contentScale = ContentScale.Crop
+        )
+        Text(
+            text = stringResource(destination.nameId),
+            color = Color.White,
+            fontSize = 14.sp,
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp)
+        )
     }
 }
 

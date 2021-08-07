@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Lazy Vertical Grid</string>
+
+    <string name="destination1">Dhaka</string>
+    <string name="destination2">Sundarbans</string>
+    <string name="destination3">Sonargaon</string>
+    <string name="destination4">Barisal</string>
+    <string name="destination5">Srimangal</string>
+    <string name="destination6">Chittagong</string>
+    <string name="destination7">Cox\'s Bazar</string>
+
+    <string name="description1">Dhaka is the capital city of Bangladesh, in southern Asia. Set beside the Buriganga River, it’s at the center of national government, trade and culture. The 17th-century old city was the Mughal capital of Bengal, and many palaces and mosques remain. American architect Louis Khan’s National Parliament House complex typifies the huge, fast-growing modern metropolis.</string>
+    <string name="description2">Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India\'s state of West Bengal to the Baleswar River in Bangladesh\'s division of Khulna.</string>
+    <string name="description3">Sonargaon is a historic city in central Bangladesh. It corresponds to the Sonargaon Upazila of Narayanganj District in Dhaka Division. Sonargaon is one of the old capitals of the historic region of Bengal and was an administrative center of eastern Bengal. It was also a river port.</string>
+    <string name="description4">Barisal, officially known as Barishal, is a major city that lies on the banks of the Kirtankhola river in south-central Bangladesh. It is the largest city and the administrative headquarter of both Barisal District and Barisal Division. It is one of the oldest municipalities and river ports of the country.</string>
+    <string name="description5">Sreemangal has been nicknamed the tea capital of Bangladesh, due to the number of tea gardens in the area, and is the place of origin of the Seven Color Tea.[2] The Bangladesh Tea Research Institute in Sreemangal has made a number of contributions in evolving and standardising the quality of tea, and introducing its research findings to the tea industry of Bangladesh.[8] Pineapples from the Sreemangal area are known for their flavour and natural sweetness.</string>
+    <string name="description6">The Chittagong Hill Tracts is a region home to 11 different tribes who’s language, cultural history, dress attire and religion (which is Buddhist while the rest of Bangladesh is Islamic) differ significantly in comparison to the rest of the country. Unlike the signature surrounding flatlands, the landscape contains an array of plentiful rolling hills, lakes and waterfalls.</string>
+    <string name="description7">Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts.</string>
 </resources>
