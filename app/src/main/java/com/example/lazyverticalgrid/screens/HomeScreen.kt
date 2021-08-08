@@ -1,6 +1,5 @@
 package com.example.lazyverticalgrid.screens
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -8,7 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -33,24 +32,23 @@ fun HomeScreen(navController: NavHostController) {
         cells = GridCells.Adaptive(minSize = 140.dp),
         contentPadding = PaddingValues(16.dp)
     ) {
-        items(destinations) { destination ->
+        itemsIndexed(destinations) { index, destination ->
             Row(Modifier.padding(8.dp)) {
-                ItemLayout(destination, navController)
+                ItemLayout(destination, index, navController)
             }
         }
     }
 }
 
 @Composable
-fun ItemLayout(destination: Destination, navController: NavHostController) {
-    //val destinationName = stringResource(destination.nameId)
+fun ItemLayout(destination: Destination, index: Int, navController: NavHostController) {
     Column(
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .background(MaterialTheme.colors.primaryVariant)
             .fillMaxWidth()
             .clickable {
-                navController.navigate("details/${destination.nameId}")
+                navController.navigate("details/$index")
             }
     ) {
         Image(
@@ -66,13 +64,6 @@ fun ItemLayout(destination: Destination, navController: NavHostController) {
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp)
         )
     }
-}
-
-@ExperimentalFoundationApi
-@Preview
-@Composable
-fun HomeScreenPreview() {
-    //HomeScreen(navController)
 }
 
 
