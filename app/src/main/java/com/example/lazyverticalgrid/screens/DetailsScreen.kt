@@ -2,6 +2,8 @@ package com.example.lazyverticalgrid.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
@@ -32,6 +34,7 @@ fun DetailsScreen(index: String, navController: NavController) {
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
     ) {
         Image(
             painter = destinationImage,
