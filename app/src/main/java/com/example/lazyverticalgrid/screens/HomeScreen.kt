@@ -30,7 +30,7 @@ fun HomeScreen(navController: NavHostController) {
 
     LazyVerticalGrid(
         cells = GridCells.Adaptive(minSize = 140.dp),
-        contentPadding = PaddingValues(16.dp)
+        contentPadding = PaddingValues(8.dp)
     ) {
         itemsIndexed(destinations) { index, destination ->
             Row(Modifier.padding(8.dp)) {
