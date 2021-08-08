@@ -19,14 +19,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.example.lazyverticalgrid.DestinationViewModel
 import com.example.lazyverticalgrid.data.DestinationDataSource
 import com.example.lazyverticalgrid.model.Destination
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController, destinationViewModel: DestinationViewModel = viewModel()) {
     val destinations = DestinationDataSource().loadData()
+
+    destinationViewModel.setTitle("Lazy Grid Layout")
 
     LazyVerticalGrid(
         cells = GridCells.Adaptive(minSize = 140.dp),
@@ -41,7 +45,11 @@ fun HomeScreen(navController: NavHostController) {
 }
 
 @Composable
-fun ItemLayout(destination: Destination, index: Int, navController: NavHostController) {
+fun ItemLayout(
+    destination: Destination,
+    index: Int,
+    navController: NavHostController
+) {
     Column(
         verticalArrangement = Arrangement.Center,
         modifier = Modifier

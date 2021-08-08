@@ -18,17 +18,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.lazyverticalgrid.DestinationViewModel
 import com.example.lazyverticalgrid.data.DestinationDataSource
 
 @Composable
-fun DetailsScreen(index: String, navController: NavController) {
+fun DetailsScreen(
+    index: String,
+    navController: NavController,
+    destinationViewModel: DestinationViewModel = viewModel()
+) {
     val dataSource = DestinationDataSource().loadData()
 
     val destination = dataSource[index.toInt()]
     val destinationName = stringResource(destination.nameId)
     val destinationDesc = stringResource(destination.descriptionId)
     val destinationImage = painterResource(destination.photoId)
+
+    destinationViewModel.setTitle("Destination Details")
 
     Column(
         modifier = Modifier
@@ -52,7 +60,11 @@ fun DetailsScreen(index: String, navController: NavController) {
             Text(text = destinationDesc, lineHeight = 24.sp)
             Row(horizontalArrangement = Arrangement.End, modifier = Modifier.fillMaxWidth()) {
                 OutlinedButton(
-                    onClick = { navController.navigate("home") },
+                    onClick = {
+                        navController.navigate("home") {
+                            popUpTo("home") { inclusive = true }
+                        }
+                    },
                     modifier = Modifier.padding(top = 24.dp)
                 ) {
                     Image(

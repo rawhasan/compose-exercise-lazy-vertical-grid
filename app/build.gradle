@@ -65,4 +65,7 @@ dependencies {
 
     // Compose Navigation
     implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
+
+    // Compose LiveData (StackOverflow)
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
 }
