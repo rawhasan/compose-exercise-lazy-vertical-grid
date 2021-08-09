@@ -27,7 +27,7 @@ import com.example.lazyverticalgrid.data.DestinationDataSource
 fun DetailsScreen(
     index: String,
     navController: NavController,
-    destinationViewModel: DestinationViewModel = viewModel()
+    destinationViewModel: DestinationViewModel
 ) {
     val dataSource = DestinationDataSource().loadData()
 
@@ -36,7 +36,7 @@ fun DetailsScreen(
     val destinationDesc = stringResource(destination.descriptionId)
     val destinationImage = painterResource(destination.photoId)
 
-    destinationViewModel.setTitle("Destination Details")
+    destinationViewModel.setTitle(destinationName)
 
     Column(
         modifier = Modifier

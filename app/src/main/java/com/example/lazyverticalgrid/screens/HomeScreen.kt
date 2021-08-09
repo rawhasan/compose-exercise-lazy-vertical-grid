@@ -27,7 +27,7 @@ import com.example.lazyverticalgrid.model.Destination
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(navController: NavHostController, destinationViewModel: DestinationViewModel = viewModel()) {
+fun HomeScreen(navController: NavHostController, destinationViewModel: DestinationViewModel) {
     val destinations = DestinationDataSource().loadData()
 
     destinationViewModel.setTitle("Lazy Grid Layout")

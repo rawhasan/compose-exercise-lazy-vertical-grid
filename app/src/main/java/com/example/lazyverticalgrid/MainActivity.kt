@@ -58,9 +58,9 @@ fun LazyVerticalGridActivityScreen(destinationViewModel: DestinationViewModel = 
         },
         content = {
             NavHost(navController = navController, startDestination = "home") {
-                composable("home") { HomeScreen(navController) }
+                composable("home") { HomeScreen(navController, destinationViewModel) }
                 composable("details/{listId}") { backStackEntry ->
-                    backStackEntry.arguments?.getString("listId")?.let { DetailsScreen(it, navController) }
+                    backStackEntry.arguments?.getString("listId")?.let { DetailsScreen(it, navController, destinationViewModel) }
                 }
             }
         }

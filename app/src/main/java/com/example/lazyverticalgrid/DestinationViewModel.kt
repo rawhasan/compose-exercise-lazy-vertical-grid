@@ -5,9 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+class DestinationViewModel : ViewModel() {
 //    var title = mutableStateOf("Lazy Vertical Grid")
 //        private set
-class DestinationViewModel : ViewModel() {
 
     private var _title = MutableLiveData("")
     val title: LiveData<String>
