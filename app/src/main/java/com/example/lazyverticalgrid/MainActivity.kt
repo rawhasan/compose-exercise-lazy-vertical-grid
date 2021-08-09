@@ -9,7 +9,6 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
@@ -33,9 +32,8 @@ class MainActivity : ComponentActivity() {
 fun LazyVerticalGridActivityScreen(destinationViewModel: DestinationViewModel = viewModel()) {
     val navController = rememberNavController()
     var canPop by remember { mutableStateOf(false) }
-    val title: String by destinationViewModel.title.observeAsState("")
 
-    Log.d("MainActivity_title", title ?: "__")
+    Log.d("ActivityScreen_title", destinationViewModel.title.value)
 
     navController.addOnDestinationChangedListener { controller, _, _ ->
         canPop = controller.previousBackStackEntry != null
@@ -54,7 +52,7 @@ fun LazyVerticalGridActivityScreen(destinationViewModel: DestinationViewModel = 
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text(title) }, navigationIcon = navigationIcon)
+            TopAppBar(title = { Text(destinationViewModel.title.value) }, navigationIcon = navigationIcon)
         },
         content = {
             NavHost(navController = navController, startDestination = "home") {

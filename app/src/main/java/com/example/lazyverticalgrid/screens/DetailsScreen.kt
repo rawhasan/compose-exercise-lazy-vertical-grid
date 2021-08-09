@@ -4,21 +4,17 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.lazyverticalgrid.DestinationViewModel
 import com.example.lazyverticalgrid.data.DestinationDataSource
@@ -36,7 +32,9 @@ fun DetailsScreen(
     val destinationDesc = stringResource(destination.descriptionId)
     val destinationImage = painterResource(destination.photoId)
 
-    destinationViewModel.setTitle(destinationName)
+    LaunchedEffect(Unit) {
+        destinationViewModel.setTitle(destinationName)
+    }
 
     Column(
         modifier = Modifier
@@ -67,13 +65,7 @@ fun DetailsScreen(
                     },
                     modifier = Modifier.padding(top = 24.dp)
                 ) {
-                    Image(
-                        imageVector = Icons.Filled.ArrowBack,
-                        contentDescription = null,
-                        colorFilter = ColorFilter.tint(MaterialTheme.colors.primaryVariant),
-                        modifier = Modifier.size(20.dp)
-                    )
-                    Text("Back to Destinations", modifier = Modifier.padding(start = 16.dp))
+                    Text("Back to Destinations")
                 }
             }
         }
