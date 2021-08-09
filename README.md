@@ -4,3 +4,9 @@
 - Using Scaffold with TopAppBar and NavHost.
 - Navigation back button on TopAppBar.
 - Change TopAppBar title dynamically in different screens.
+
+<br />
+
+Home Screen | Details Screen
+:---: | :---:
+![home-screen](https://user-images.githubusercontent.com/67064997/128686864-503e759a-c20f-42a7-9a11-a8bf2bc26d90.png) | ![details-screen](https://user-images.githubusercontent.com/67064997/128686855-01064390-e29e-43a5-9bba-cc3c714348f0.png)
