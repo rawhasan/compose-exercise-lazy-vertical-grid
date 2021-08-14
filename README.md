@@ -5,6 +5,12 @@
 - Navigation back button on TopAppBar.
 - Change TopAppBar title dynamically in different screens (using a shared view model).
 
+## Dependencies
+```
+// Compose Navigation
+implementation "androidx.navigation:navigation-compose:2.4.0-alpha05"
+```
+
 <br />
 
 Home Screen | Details Screen
