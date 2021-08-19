@@ -40,7 +40,7 @@ fun DetailsScreen(
         modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth()
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState()) // scrollable column
     ) {
         Image(
             painter = destinationImage,
